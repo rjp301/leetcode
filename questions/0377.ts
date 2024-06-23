@@ -1,9 +1,4 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
-module.exports = function (nums, target) {
+export function ans(nums: number[], target: number) {
   const dp = new Array(target + 1).fill(0);
   dp[0] = 1;
 
@@ -16,4 +11,4 @@ module.exports = function (nums, target) {
   }
 
   return dp[target];
-};
+}
