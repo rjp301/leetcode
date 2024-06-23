@@ -1,8 +1,4 @@
-/**
- * @param {string} digits
- * @return {string[]}
- */
-var letterCombinations = function (digits) {
+export function letterCombinations(digits: string) {
   if (!digits) return [];
 
   const letters = {
@@ -16,7 +12,7 @@ var letterCombinations = function (digits) {
     9: "wxyz",
   };
 
-  const dfs = (index, str) => {
+  const dfs = (index: number, str: string) => {
     if (str.length === digits.length) return result.push(str);
 
     for (const char of letters[digits[index]]) {
@@ -28,7 +24,7 @@ var letterCombinations = function (digits) {
   dfs(0, "");
 
   return result;
-};
+}
 
 console.table(letterCombinations("23"));
 console.table(letterCombinations(""));
